@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    defaultConfig {
+        applicationId "com.example.avatarmind.robotmotion"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.github.xaguzman:pathfinding:0.2.6'
+}

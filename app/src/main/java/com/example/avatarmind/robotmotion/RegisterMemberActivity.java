@@ -9,12 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class RegisterMemberActivity extends Activity implements View.OnClickListener {
 
@@ -57,34 +62,6 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         mBtnSubmit = (Button) findViewById(R.id.submit_button);
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
-
-        //get reference to attendee node
-        mFirebaseDatabase = mFirebaseInstance.getReference("attendees");
-
-        //store app title to 'app_title' node
-        mFirebaseInstance.getReference("app_title").setValue("Realtime Database");
-
-        // app_title change listener
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.e(TAG, "App title updated");
-
-                String appTitle = dataSnapshot.getValue(String.class);
-
-                //update toolbar title
-                //getSupportActionBar().setTitle(appTitle);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                //Failed to read Value
-                Log.e(TAG, "Failed to read app title value.", databaseError.toException());
-            }
-        });
-
-
     }
 
     private void initListener() {
@@ -97,19 +74,8 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.submit_button:
-                //intent.setClass(RegisterMemberActivity.this, ExtrasActivity.class);
-                //save/update the attendee
-                String name = mNameEt.getText().toString();
-                String age = mUserAgeEt.getText().toString();
-                String phone = mUserPhoneEt.getText().toString();
-                String ecname = mECName.getText().toString();
-                String ecphone  = mECPhoneEt.getText().toString();
-
-                //check for already existed user id
-                if(TextUtils.isEmpty(userId))
-                {
-                   // createUser(....);
-                }
+                createAttendee();
+                intent.setClass(RegisterMemberActivity.this, MainActivity.class);
                 break;
             case R.id.common_title_back:
                 finish();
@@ -120,16 +86,26 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         startActivity(intent);
     }
 
-    //creating new user node under 'attendees'
-    public void createUser()
+    //creating new attendee node under 'attendees'
+    public void createAttendee()
     {
-        //Todo
-        //in real apps this userId should be fetched
-        //by implementing firebase auth
-        if(TextUtils.isEmpty(userId)){
-            userId = mFirebaseDatabase.push().getKey();
-        }
+        mFirebaseDatabase = mFirebaseInstance.getReference("members");
+        String name = mNameEt.getText().toString();
+        String phone = mUserPhoneEt.getText().toString();
+        String age = mUserAgeEt.getText().toString();
+        String ecName = mECName.getText().toString();
+        String ecPhone = mECPhoneEt.getText().toString();
 
-        //Attendee attendee = new Attendee(name, age, phone, ecname, ecphone);
+        Attendee attendee = new Attendee(name, age, phone, ecName, ecPhone);
+        mFirebaseDatabase.push().setValue(attendee);
+
+        mFirebaseDatabase = mFirebaseInstance.getReference("attendees");
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        String strDate = formatter.format(date);
+        Log.i("date", strDate);
+        mFirebaseDatabase.child(strDate.toString()).push().setValue(attendee.getName());
+        Toast.makeText(this, "You are Registered.",
+                Toast.LENGTH_SHORT).show();
     }
 }

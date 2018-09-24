@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.main_new_member:
-                intent.setClass(MainActivity.this, SocialMediaActivity.class);
+                intent.setClass(MainActivity.this, RegisterMemberActivity.class);
                 break;
             case R.id.main_existing_member:
                 intent.setClass(MainActivity.this, ConfirmRegistrationActivity.class);

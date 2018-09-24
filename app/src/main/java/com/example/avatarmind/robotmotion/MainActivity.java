@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
         initListener();
 
-        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+      // mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
 
     }
 
@@ -54,24 +54,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        mSpeechManager.startSpeaking("Hi people, how are you today!");
-//        Intent intent = new Intent();
-//        switch (v.getId()) {
-//            case R.id.main_new_member:
-//                intent.setClass(MainActivity.this, RegisterMemberActivity.class);
-//                break;
-//            case R.id.main_existing_member:
-//                intent.setClass(MainActivity.this, ConfirmRegistrationActivity.class);
-//                break;
-//            case R.id.main_start_session:
-//                intent.setClass(MainActivity.this, ExtrasActivity.class);
-//                break;
-//            case R.id.common_title_back:
-//                finish();
-//                return;
-//            default:
-//                break;
-//        }
-//        startActivity(intent);
+        //mSpeechManager.startSpeaking("Hi people, how are you today!");
+        Intent intent = new Intent();
+        switch (v.getId()) {
+            case R.id.main_new_member:
+                intent.setClass(MainActivity.this, SocialMediaActivity.class);
+                break;
+            case R.id.main_existing_member:
+                intent.setClass(MainActivity.this, ConfirmRegistrationActivity.class);
+                break;
+            case R.id.main_start_session:
+                intent.setClass(MainActivity.this, SessionActivity.class);
+                break;
+            case R.id.common_title_back:
+                finish();
+                return;
+            default:
+                break;
+        }
+        startActivity(intent);
     }
 }

@@ -7,6 +7,13 @@
 
     <include layout="@layout/common_title" />
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:fillViewport="false">
+
     <LinearLayout
         android:id="@+id/left_linearlayout"
         android:layout_width="wrap_content"
@@ -15,7 +22,32 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/left_linearlayout"
+            android:id="@+id/left_linearlayout0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <TextView
+            android:text="Current Time: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="1" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textClock"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_linearlayout3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,7 +69,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/left_linearlayout"
+            android:id="@+id/left_linearlayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -58,7 +90,7 @@
                 android:inputType="number" />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/left_linearlayout"
+            android:id="@+id/left_linearlayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,14 +123,14 @@
             android:text="Emergency Contact Details " />
 
         <LinearLayout
-            android:id="@+id/left_linearlayout"
+            android:id="@+id/linearlayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/phonetv_ec"
+                android:id="@+id/nametv_ec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -106,7 +138,31 @@
                 android:text="Contact Name: " />
 
             <EditText
-                android:id="@+id/users_phone_ec"
+                android:id="@+id/users_name_ec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l_linearlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ecphonetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Phone: " />
+
+            <EditText
+                android:id="@+id/ec_users_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Enter Phone Number"
@@ -120,9 +176,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/submit" />
     </LinearLayout>
 
+    </ScrollView>
 </LinearLayout>
 

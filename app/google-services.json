@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "774950781247",
+    "firebase_url": "https://menkacapstone.firebaseio.com",
+    "project_id": "menkacapstone",
+    "storage_bucket": "menkacapstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774950781247:android:7673a8ed1bbc2167",
+        "android_client_info": {
+          "package_name": "com.example.avatarmind.robotmotion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774950781247-1k9hrveu2o0shim0i81jeh0mglr9glh5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.avatarmind.robotmotion",
+            "certificate_hash": "96a9b07c142b9ab322c25fd65dcbffaeaa73adde"
+          }
+        },
+        {
+          "client_id": "774950781247-75hmgma5p23q1itb7rlld57psden7rdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEkPACzJv0nbK5-uAsQZKW3iVyvEN-lLc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774950781247-75hmgma5p23q1itb7rlld57psden7rdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

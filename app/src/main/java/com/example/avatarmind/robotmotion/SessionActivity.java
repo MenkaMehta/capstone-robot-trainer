@@ -58,7 +58,7 @@ public class SessionActivity extends Activity implements View.OnClickListener {
                 intent.setClass(SessionActivity.this, ExtrasActivity.class);
                 break;
             case R.id.main_healthy_diet:
-                intent.setClass(SessionActivity.this, HeadActivity.class);
+                intent.setClass(SessionActivity.this, DietActivity.class);
                 break;
             case R.id.main_aerobics:
                 intent.setClass(SessionActivity.this, WheelActivity.class);

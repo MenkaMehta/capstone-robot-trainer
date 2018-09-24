@@ -27,10 +27,14 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.firebase:firebase-database:11.8.0'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.github.xaguzman:pathfinding:0.2.6'
+    implementation files('libs/activation.jar')
 }
+
+apply plugin: 'com.google.gms.google-services'

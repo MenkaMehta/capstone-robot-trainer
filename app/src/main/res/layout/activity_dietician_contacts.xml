@@ -27,7 +27,7 @@
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#003366"
-                android:text="Available Dietician Contact Info" />
+                android:text="Dietitians Contacts" />
 
             <TextView
                 android:id="@+id/contact0tv"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="Name: Ryan Pereira" />
+                android:text="Name: Dr John Smith" />
 
             <TextView
             android:id="@+id/contact1tv"
@@ -54,17 +54,106 @@
                 android:text="Consultation: Mondays and Thursday " />
 
             <TextView
+                android:id="@+id/contact0_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Email: John.Smith@mmtc.com.au " />
+
+            <TextView
                 android:id="@+id/contact3tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="Venue: At Gym, Level 2 Room 204" />
+                android:paddingBottom="20dp"
+                android:text="Venue: Level 2 Room 203" />
 
 
 
 
 
+            <TextView
+                android:id="@+id/contact1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Name: Dr Phoebe Rose " />
+
+            <TextView
+                android:id="@+id/contact1_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Phone: 0413467890" />
+
+            <TextView
+                android:id="@+id/contact1_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Consultation: Wednesdays and Fridays " />
+
+            <TextView
+                android:id="@+id/contact1_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Email: Phoebe.Rose@mmtc.com.au " />
+
+            <TextView
+                android:id="@+id/contact1_venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:paddingBottom="20dp"
+                android:text="Venue: Level 2 Room 205" />
+
+            <TextView
+                android:id="@+id/contact2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Name: Dr Stewart May " />
+
+            <TextView
+                android:id="@+id/contact2_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Phone: 0413564289" />
+
+            <TextView
+                android:id="@+id/contact2_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Consultation: Tuesdays and Thursdays " />
+
+            <TextView
+                android:id="@+id/contact2_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Email: Stewart.May@mmtc.com.au " />
+
+            <TextView
+                android:id="@+id/contact2_venue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Venue: Level 2 Room 202" />
 
 
         </LinearLayout>

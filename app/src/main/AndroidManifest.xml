@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.avatarmind.robotmotion">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,9 +65,9 @@
             android:label="NonVegDietActivity" >
         </activity>
         <activity
-        android:name=".FruitDietActivity"
-        android:label="FruitDietActivity" >
-    </activity>
+            android:name=".FruitDietActivity"
+            android:label="FruitDietActivity" >
+        </activity>
         <activity
             android:name=".ContactDieticianActivity"
             android:label="ContactDieticianActivity" >
@@ -74,6 +81,30 @@
             android:label="SocialMediaActivity" >
         </activity>
 
+        <activity
+            android:name=".RoboticWorkoutActivity"
+            android:label="RoboticWorkoutActivity" >
+        </activity>
+
+        <activity
+        android:name=".YogaActivity"
+        android:label="YogaActivity" >
+        </activity>
+        <activity
+            android:name=".AerobicsActivity"
+            android:label="AerobicsActivity" >
+        </activity>
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.avatarmind.robotmotion.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

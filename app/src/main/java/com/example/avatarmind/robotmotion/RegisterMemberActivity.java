@@ -3,6 +3,8 @@ package com.example.avatarmind.robotmotion;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.robot.speech.SpeechManager;
+import android.robot.speech.SpeechService;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +39,7 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
 
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
+    private SpeechManager mSpeechManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,9 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         if (getActionBar() != null) {
             getActionBar().hide();
         }
+
+        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+        mSpeechManager.startSpeaking("Welcome and Please Register as a new member.");
 
         initView();
         initListener();
@@ -74,7 +80,7 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.submit_button:
-                createAttendee();
+                createMember();
                 intent.setClass(RegisterMemberActivity.this, MainActivity.class);
                 break;
             case R.id.common_title_back:
@@ -87,7 +93,7 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
     }
 
     //creating new attendee node under 'attendees'
-    public void createAttendee()
+    public void createMember()
     {
         mFirebaseDatabase = mFirebaseInstance.getReference("members");
         String name = mNameEt.getText().toString();
@@ -98,14 +104,19 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
 
         Attendee attendee = new Attendee(name, age, phone, ecName, ecPhone);
         mFirebaseDatabase.push().setValue(attendee);
+        registerAttendee(attendee);
+    }
 
+    public void registerAttendee(Attendee attendee){
         mFirebaseDatabase = mFirebaseInstance.getReference("attendees");
         DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         String strDate = formatter.format(date);
         Log.i("date", strDate);
         mFirebaseDatabase.child(strDate.toString()).push().setValue(attendee.getName());
-        Toast.makeText(this, "You are Registered.",
+        Toast.makeText(this, "You have been registered for today's session.",
                 Toast.LENGTH_SHORT).show();
     }
+
+
 }

@@ -32,7 +32,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
         initListener();
 
-      // mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+       mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+        mSpeechManager.startSpeaking("Welcome to Menka's training center");
 
     }
 

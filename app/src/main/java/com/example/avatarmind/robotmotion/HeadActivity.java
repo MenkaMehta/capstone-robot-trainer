@@ -12,11 +12,8 @@ import android.widget.TextView;
 public class HeadActivity extends Activity implements OnClickListener {
 
     private ImageView mTitleBack;
-
     private Button mNodBtn;
-
     private Button mShakeBtn;
-
     private RobotMotion mRobotMotion = new RobotMotion();
 
     @Override

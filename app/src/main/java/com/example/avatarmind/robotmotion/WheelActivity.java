@@ -14,15 +14,10 @@ import android.widget.TextView;
 public class WheelActivity extends Activity implements OnClickListener {
 
     private ImageView mTitleBack;
-
     private EditText mEtDistance;
-
     private EditText mEtAngle;
-
     private Button mBtnDistance;
-
     private Button mBtnAngle;
-
     private RobotMotion mRobotMotion = new RobotMotion();
 
     @Override

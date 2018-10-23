@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+/**
+	Capstone Project 2018
+	Developed by Menka Mehta
+**/
+
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private ImageView mTitleBack;
@@ -22,6 +27,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private SpeechManager mSpeechManager;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +38,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
         initListener();
 
-       mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
-        mSpeechManager.startSpeaking("Welcome to Menka's training center");
+        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+        mSpeechManager.startSpeaking("Hi My name is Aipal. I am your robot trainer. I will be with you today.");
 
     }
 

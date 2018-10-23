@@ -20,13 +20,9 @@ public class RoboticWorkoutActivity extends Activity implements View.OnClickList
 
 
     private ImageView mTitleBack;
-
     private Button mBtnPlay;
-
     private Button mBtnStop;
-
     RobotPlayer robotPlayer;
-
     SpeechManager mSpeechManager;
 
     @Override
@@ -44,7 +40,6 @@ public class RoboticWorkoutActivity extends Activity implements View.OnClickList
 
     private void initView() {
         setContentView(R.layout.activity_robotic_workout);
-
         mTitleBack = (ImageView) findViewById(R.id.common_title_back);
         mBtnPlay = (Button) findViewById(R.id.main_play);
         mBtnStop = (Button) findViewById(R.id.main_stop);
@@ -82,7 +77,6 @@ public class RoboticWorkoutActivity extends Activity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        //mSpeechManager.startSpeaking("Hi people, how are you today!");
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.main_play:

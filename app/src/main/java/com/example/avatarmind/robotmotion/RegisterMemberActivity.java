@@ -49,7 +49,7 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         }
 
         mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
-        mSpeechManager.startSpeaking("Welcome and Please Register as a new member.");
+        mSpeechManager.startSpeaking("Welcome and Please Register as a new member. Enter your details and click the submit button.");
 
         initView();
         initListener();
@@ -117,6 +117,5 @@ public class RegisterMemberActivity extends Activity implements View.OnClickList
         Toast.makeText(this, "You have been registered for today's session.",
                 Toast.LENGTH_SHORT).show();
     }
-
-
+    
 }

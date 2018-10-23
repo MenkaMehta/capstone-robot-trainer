@@ -19,13 +19,9 @@ public class EmojiActivity extends Activity implements OnClickListener {
             RobotMotion.Emoji.BLINK , RobotMotion.Emoji.FROWN};
 
     private ImageView mTitleBack;
-
     private Spinner mEmojiSelector;
-
     private Button mBtnRun;
-
     private Button mBtnReset;
-
     private RobotMotion mRobotMotion = new RobotMotion();
 
     @Override

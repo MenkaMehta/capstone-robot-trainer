@@ -19,21 +19,13 @@ import android.widget.Toast;
 public class MotorsActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "MotorsActivity";
-
     private ImageView mTitleBack;
-
     private TextView mRangeHint;
-
     private Spinner mDirection;
-
     private Spinner mAction;
-
     private EditText mAngle;
-
     private Button mBtnSubmit;
-
     private Button mBtnReset;
-
     private RobotMotion mRobotMotion = new RobotMotion();
 
     @Override

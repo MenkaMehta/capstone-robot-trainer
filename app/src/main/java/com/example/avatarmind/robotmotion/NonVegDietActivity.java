@@ -3,6 +3,8 @@ package com.example.avatarmind.robotmotion;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.robot.speech.SpeechManager;
+import android.robot.speech.SpeechService;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -10,14 +12,13 @@ public class NonVegDietActivity extends Activity implements View.OnClickListener
 
     private ImageView mTitleBack;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getActionBar() != null) {
             getActionBar().hide();
         }
+
 
         initView();
         initListener();

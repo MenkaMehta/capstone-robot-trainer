@@ -19,17 +19,13 @@ public class AerobicsActivity extends Activity implements View.OnClickListener {
         if (getActionBar() != null) {
             getActionBar().hide();
         }
-
         initView();
         initListener();
-
     }
 
     private void initView() {
         setContentView(R.layout.activity_aerobics);
-
         mTitleBack = (ImageView) findViewById(R.id.common_title_back);
-
         String frameVideo = "<html><body><iframe width=\"840\" height=\"400\" src=\"https://www.youtube.com/embed/WmQ72Bw5yiY\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe></body></html>";
 
         WebView displayYoutubeVideo = (WebView) findViewById(R.id.mWebView);

@@ -35,7 +35,7 @@ public class SessionActivity extends Activity implements View.OnClickListener {
         }
 
         mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
-        mSpeechManager.startSpeaking("It is a good day! Lets workout.");
+        mSpeechManager.startSpeaking("It is a good day! We need to look after our health. Lets workout.");
         initView();
         initListener();
 

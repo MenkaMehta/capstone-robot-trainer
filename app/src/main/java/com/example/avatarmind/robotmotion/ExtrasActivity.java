@@ -10,13 +10,9 @@ import android.widget.ImageView;
 public class ExtrasActivity extends Activity implements View.OnClickListener {
 
     private ImageView mTitleBack;
-
     private Button mBtnMotors;
-
     private Button mBtnHead;
-
     private Button mBtnWheel;
-
     private Button mBtnEmoji;
 
 

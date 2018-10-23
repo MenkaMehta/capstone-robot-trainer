@@ -32,7 +32,6 @@ public class ConfirmRegistrationActivity extends Activity implements View.OnClic
 
     private ImageView mTitleBack;
     private EditText mConfUserPhoneEt;
-    private Button mBtnSubmit;
     private Button mBtnContinue;
     private SpeechManager mSpeechManager;
     private List<Attendee> attendees = new ArrayList<Attendee>();
@@ -45,8 +44,9 @@ public class ConfirmRegistrationActivity extends Activity implements View.OnClic
         }
         mFirebaseInstance = FirebaseDatabase.getInstance();
 
-        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
-        mSpeechManager.startSpeaking("Provide a phone number for confirmation.");
+       mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+
+       mSpeechManager.startSpeaking("Provide a phone number for confirmation.");
 
         initView();
 
@@ -79,13 +79,11 @@ public class ConfirmRegistrationActivity extends Activity implements View.OnClic
 
         mTitleBack = (ImageView) findViewById(R.id.common_title_back);
         mConfUserPhoneEt = (EditText) findViewById(R.id.confirm_users_phoneEt);
-        mBtnSubmit = (Button) findViewById(R.id.confirmed_submit_button);
         mBtnContinue = (Button) findViewById(R.id.continue_button);
     }
 
     private void initListener() {
         mTitleBack.setOnClickListener(this);
-        mBtnSubmit.setOnClickListener(this);
         mBtnContinue.setOnClickListener(this);
     }
 
@@ -93,10 +91,6 @@ public class ConfirmRegistrationActivity extends Activity implements View.OnClic
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
-            case R.id.submit_button:
-                //validateMember();
-                intent.setClass(ConfirmRegistrationActivity.this, MainActivity.class);
-                break;
             case R.id.continue_button:
                 validateMember();
                 intent.setClass(ConfirmRegistrationActivity.this, MainActivity.class);

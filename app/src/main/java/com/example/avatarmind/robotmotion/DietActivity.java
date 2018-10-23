@@ -3,6 +3,8 @@ package com.example.avatarmind.robotmotion;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.robot.speech.SpeechManager;
+import android.robot.speech.SpeechService;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ public class DietActivity extends Activity implements View.OnClickListener {
     private ImageButton mBtnNonVegetarian;
     private ImageButton mBtnFruit;
     private ImageButton mBtnDietician;
+    private SpeechManager mSpeechManager;
 
 
 
@@ -26,6 +29,9 @@ public class DietActivity extends Activity implements View.OnClickListener {
             getActionBar().hide();
         }
 
+
+        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+        mSpeechManager.startSpeaking("Please spend some time reading this dietary advise from our experts.");
         initView();
         initListener();
 

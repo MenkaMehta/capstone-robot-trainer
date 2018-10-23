@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.robot.motion.RobotMotion;
+import android.robot.speech.SpeechManager;
+import android.robot.speech.SpeechService;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +41,8 @@ public class SocialMediaActivity extends Activity implements OnClickListener {
     private Twitter twitter;
     private Bitmap mbitmap;
 
+    private SpeechManager mSpeechManager;
+
     String mCurrentPhotoPath;
     File mImageFile;
 
@@ -52,6 +56,9 @@ public class SocialMediaActivity extends Activity implements OnClickListener {
         }
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+        mSpeechManager = (SpeechManager) getSystemService(SpeechService.SERVICE_NAME);
+        mSpeechManager.startSpeaking(" Share your experience and moments with us. We provide twenty four hours support.");
 
         initView();
         initListener();

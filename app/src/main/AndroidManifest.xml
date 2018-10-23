@@ -87,8 +87,8 @@
         </activity>
 
         <activity
-        android:name=".YogaActivity"
-        android:label="YogaActivity" >
+            android:name=".YogaActivity"
+            android:label="YogaActivity" >
         </activity>
         <activity
             android:name=".AerobicsActivity"
